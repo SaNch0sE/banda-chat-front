@@ -4,14 +4,16 @@ import IconMoon from "./MiddleIcon";
 function Header() {
   return (
     <header>
-      <div className="Hlogo">
-        <div className="HText">
+      <div className="Header">
+        <div className="HLeft">
+          <div className="Icon">
+            <IconMoon />
+          </div>
+          <div className="HText">
           <p className="text1">See</p>
           <p className="text2">u</p>
           <p className="text3">Live</p>
-        </div>
-        <div className="MiddleIcon">
-          <IconMoon />
+          </div>
         </div>
         <div className="Hright">
           <input className="InputLogin" placeholder="Login"></input>
