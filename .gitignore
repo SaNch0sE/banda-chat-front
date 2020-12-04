@@ -21,3 +21,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+src/header/Header.css.map
+src/header/Header.scss
+.eslintcache
+src/sign up-in/Sign up-in style.scss
+src/sign up-in/Sign up-in style.css.map
