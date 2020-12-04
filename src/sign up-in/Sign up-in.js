@@ -1,5 +1,6 @@
 import React from "react";
 import CloudMoon from "../img/Cloud-Moon.png";
+import Eye from "./eyeIcon"
 
 function Sign() {
   return (
@@ -28,12 +29,15 @@ function Sign() {
             ></input>
           </form>
           <form>
+            <div className = "Vlads">
             <input
               id="InputPassword"
               className="InputPassword"
               type="password"
               placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"
             ></input>
+            <button type = "button"><Eye /></button>
+            </div>
           </form>
           <a href="#">
             <small>Forgot your password?</small>

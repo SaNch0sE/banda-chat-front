@@ -69,16 +69,6 @@
   margin-top: 0;
 }
 
-.Sign .Sign-in .MySendCodeForm [type=password], .Sign .Sign-in .MySendCodeForm label {
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
 .Sign .Sign-in .MySendCodeForm input::-webkit-input-placeholder {
   opacity: 1;
   -webkit-transition: opacity 0.3s ease;
@@ -128,7 +118,6 @@
 }
 
 .Sign .Sign-in .MySendCodeForm input {
-  margin-bottom: 15px;
   text-align: center;
   border-radius: 10px;
   border: none;
@@ -138,5 +127,27 @@
   font-size: 15px;
   outline: none;
   border: none;
+  margin-bottom: 15px;
+}
+
+.Sign .Sign-in .MySendCodeForm .Vlads {
+  position: relative;
+}
+
+.Sign .Sign-in .MySendCodeForm .Vlads button {
+  position: absolute;
+  right: 0;
+  top: 35%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+
+.Sign .Sign-in .MySendCodeForm .Vlads .EyeIcon {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
 }
 /*# sourceMappingURL=Sign up-in style.css.map */
