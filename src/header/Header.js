@@ -15,23 +15,6 @@ function Header() {
             <p className="text3">Live</p>
           </div>
         </div>
-        <div className="Hright">
-          <form>
-            <input
-              className="InputLogin"
-              placeholder="Login or email"
-              minLength="5"
-              maxLength="30"
-            ></input>
-          </form>
-          <form>
-            <input
-              className="InputPassword"
-              placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"
-            ></input>
-          </form>
-          <a href="#">Forgot your password?</a>
-        </div>
       </div>
     </header>
   );

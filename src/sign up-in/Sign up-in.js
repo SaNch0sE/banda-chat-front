@@ -1,0 +1,47 @@
+import React from "react";
+import CloudMoon from "../img/Cloud-Moon.png";
+
+function Sign() {
+  return (
+    <div className="Sign">
+      <div className="Sign-in-header">
+        <img src={CloudMoon}></img>
+      </div>
+      <div className="Sign-in">
+        <div className="pointer">
+          <a href="#">
+            <small>Sign up </small>
+            <font> &gt;</font>
+          </a>
+        </div>
+        <h1>Sign In</h1>
+        <small>Please enter your login/email and password</small>
+        <br />
+        <div className="MySendCodeForm">
+          <form>
+            <input
+              className="InputLogin"
+              placeholder="Login or email"
+              minLength="5"
+              maxLength="30"
+              type="text"
+            ></input>
+          </form>
+          <form>
+            <input
+              id="InputPassword"
+              className="InputPassword"
+              type="password"
+              placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"
+            ></input>
+          </form>
+          <a href="#">
+            <small>Forgot your password?</small>
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Sign;

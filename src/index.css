@@ -1,5 +1,12 @@
+* {
+  font-family: 'Balsamiq Sans', cursive;
+}
+a {
+  text-decoration: none;
+}
 html {
   box-sizing: border-box;
+  background-color: #e7e7e7;
 }
 *, *:after, *:before {
   box-sizing: inherit;
@@ -13,17 +20,4 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-.wrapper .Header .InputLogin, .wrapper .Header .InputPassword{
-  display: block;
-  margin-bottom: 10px; 
-  width: 100%;
-  max-width: 200px;
-  height: 100%;
-  max-height: 70px;
-}
-.wrapper .Header .Hright a {
-  font-size: 12px;
-  display: block;
-  margin-top: 5px;
 }
