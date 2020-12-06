@@ -1,10 +1,11 @@
 import React from 'react';
-import Header from './components/header/Header';
-import './components/header/Header.css';
+import Header from './components/Header/Header';
+import './components/Header/Header.css';
 import './index.css'
-import './components/sign-up-in/Sign.css'
-import SignIn from './components/sign-up-in/sign-in/SignIn';
-import SignUp from './components/sign-up-in/sign-up/SignUp';
+import './components/SignUp/Sign.css'
+import './components/SignIn/Sign.css'
+import SignIn from './components/SignUp/SignUp';
+import SignUp from './components/SignIn/SignIn';
 
 function App() {
   return (

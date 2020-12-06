@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Cloud from "../../../img/Cloud.png";
-import Eye from "../eyeIcon";
+import Cloud from "../../img/Cloud.png";
+import Eye from "./eyeIcon";
 
 export default function SignUp() {
 
