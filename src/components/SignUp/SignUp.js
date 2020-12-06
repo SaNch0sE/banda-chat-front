@@ -3,17 +3,8 @@ import Cloud from "../../img/Cloud.png";
 import Eye from "./eyeIcon";
 
 export default function SignUp() {
-
-  function signUpOff () {
-    let divUp = document.getElementsByClassName("SignUp");
-    divUp.style.display = "none"
-  }
   //use state
-    function eyeBut () {
-    let input = document.getElementsByClassName("InputPassword");
-    input.type = "text";
-  }
-  
+        
   return (
     <div className="SignUp">
       <div className="Sign-up-header">
@@ -21,7 +12,7 @@ export default function SignUp() {
       </div>
       <div className="Sign-up">
         <div className="pointer">
-          <a href="#" onClick = {signUpOff}>
+          <a href="#" >
             <small>Sign in </small>
             <font> &gt;</font>
           </a>
@@ -60,7 +51,7 @@ export default function SignUp() {
                 type="password"
                 placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"
               ></input>
-              <button type="button" onClick = {eyeBut}>
+              <button type="button">
                 <Eye />
               </button>
             </div>
