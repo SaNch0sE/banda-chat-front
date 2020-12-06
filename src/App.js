@@ -2,14 +2,18 @@ import React from 'react';
 import Header from './header/Header';
 import './header/Header.css';
 import './index.css'
-import './sign up-in/Sign up-in style.css'
-import Sign from './sign up-in/Sign up-in';
+import './sign-up-in/Sign.css'
+import SignIn from './sign-up-in/SignIn';
+import SignUp from './sign-up-in/SignUp';
 
 function App() {
   return (
     <div className="wrapper">
       <Header />
-      <Sign />
+      <div className = "Sign">
+      <SignUp />
+      <SignIn />
+      </div>
     </div>
   );
 }

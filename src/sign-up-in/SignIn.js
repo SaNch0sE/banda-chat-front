@@ -1,10 +1,10 @@
 import React from "react";
 import CloudMoon from "../img/Cloud-Moon.png";
-import Eye from "./eyeIcon"
+import Eye from "./eyeIcon";
 
-function Sign() {
+export default function SignIn() {
   return (
-    <div className="Sign">
+    <div className="SignIn">
       <div className="Sign-in-header">
         <img src={CloudMoon}></img>
       </div>
@@ -48,4 +48,3 @@ function Sign() {
   );
 }
 
-export default Sign;
