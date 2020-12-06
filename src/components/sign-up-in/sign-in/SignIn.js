@@ -1,6 +1,6 @@
 import React from "react";
-import CloudMoon from "../img/Cloud-Moon.png";
-import Eye from "./eyeIcon";
+import CloudMoon from "../../../img/Cloud-Moon.png";
+import Eye from "../eyeIcon";
 
 export default function SignIn() {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import IconMoon from "../MiddleIcon";
+import IconMoon from "./MiddleIcon";
 
 function Header() {
   return (
