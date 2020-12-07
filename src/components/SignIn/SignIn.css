@@ -1,0 +1,157 @@
+.Sign .SignIn {
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
+  max-height: 500px;
+  padding: 0 15px 30px 15px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #89c1dc;
+}
+
+.Sign .SignIn .Off {
+  display: none;
+}
+
+.Sign .SignIn .Sign-in-header {
+  margin-left: -240px;
+}
+
+.Sign .SignIn .Sign-in-header img {
+  width: 100%;
+  height: 100%;
+  max-width: 150px;
+  max-height: 100px;
+  margin-bottom: -5px;
+}
+
+.Sign .SignIn .Sign-in {
+  background-color: #e7e7e7;
+  width: 100%;
+  height: 100%;
+  border: 1px solid;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 400px;
+  max-height: 400px;
+  padding: 30px 15px;
+}
+
+.Sign .SignIn .Sign-in .pointer {
+  width: 100%;
+  height: 100%;
+  text-align: right;
+}
+
+.Sign .SignIn .Sign-in small {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.Sign .SignIn .Sign-in font {
+  font-size: 15px;
+}
+
+.Sign .SignIn .Sign-in h1 {
+  margin-top: 0;
+}
+
+.Sign .SignIn .Sign-in .MySendCodeForm input::-webkit-input-placeholder {
+  opacity: 1;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+
+.Sign .SignIn .Sign-in .MySendCodeForm input::-moz-placeholder {
+  opacity: 1;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+
+.Sign .SignIn .Sign-in .MySendCodeForm input:-moz-placeholder {
+  opacity: 1;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+
+.Sign .SignIn .Sign-in .MySendCodeForm input:-ms-input-placeholder {
+  opacity: 1;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+
+.Sign .SignIn .Sign-in .MySendCodeForm input:focus::-webkit-input-placeholder {
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+
+.Sign .SignIn .Sign-in .MySendCodeForm input:focus::-moz-placeholder {
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+
+.Sign .SignIn .Sign-in .MySendCodeForm input:focus:-moz-placeholder {
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+
+.Sign .SignIn .Sign-in .MySendCodeForm input:focus:-ms-input-placeholder {
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+
+.Sign .SignIn .Sign-in .MySendCodeForm input {
+  text-align: center;
+  border-radius: 10px;
+  border: none;
+  width: 200px;
+  height: 18px;
+  max-width: 200px;
+  font-size: 15px;
+  outline: none;
+  border: none;
+  margin-bottom: 15px;
+}
+
+.Sign .SignIn .Sign-in .MySendCodeForm .Vlads {
+  position: relative;
+}
+
+.Sign .SignIn .Sign-in .MySendCodeForm .Vlads button {
+  position: absolute;
+  right: 0;
+  top: 35%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+
+.Sign .SignIn .Sign-in .MySendCodeForm .Vlads .EyeIcon {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+}
+/*# sourceMappingURL=SignIn.css.map */
