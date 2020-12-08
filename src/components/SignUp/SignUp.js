@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Cloud from "../../img/Cloud.png";
 import Eye from "./eyeIcon";
 
-export default function SignUp() {
+export default function SignUp({ onButtonClick }) {
   let [count, setCount] = useState("password");
   let [item, setItem] = useState(true);
 
@@ -23,7 +23,11 @@ export default function SignUp() {
       </div>
       <div className="Sign-up">
         <div className="pointer">
-          <a href="#">
+          <a href = ""
+            onClick={() => {
+              onButtonClick();
+            }}
+          >
             <small>Sign in </small>
             <font> &gt;</font>
           </a>

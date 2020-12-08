@@ -1,5 +1,4 @@
-.Sign {
-  .SignIn {
+.SignIn {
     width: 100%;
     height: 100%;
     max-width: 500px;
@@ -39,6 +38,7 @@
         width: 100%;
         height: 100%;
         text-align: right;
+        cursor: pointer;
       }
       small {
         color: rgba($color: #000000, $alpha: 0.7);
@@ -90,4 +90,3 @@
       }
     }
   }
-}

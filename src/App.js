@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from "react";
 import Header from './components/Header/Header';
 import './components/Header/Header.css';
 import './index.css'
@@ -8,14 +8,16 @@ import SignIn from './components/SignUp/SignUp';
 import SignUp from './components/SignIn/SignIn';
 
 function App() {
+  const [togle, setTogle] = useState(true);
+  const onButtonClick = () => {
+  setTogle(!togle);
+  }; 
   return (
     <div className="wrapper">
       <Header />
-      <div className = "Sign">
-      <SignUp />
-      <SignIn />
+      {togle &&  <SignUp onButtonClick={onButtonClick} />}
+      {!togle &&  <SignIn onButtonClick={onButtonClick} />}
       </div>
-    </div>
   );
 }
 

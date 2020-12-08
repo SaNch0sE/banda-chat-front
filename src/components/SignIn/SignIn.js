@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import CloudMoon from "../../img/Cloud-Moon.png";
 import Eye from "./eyeIcon";
 
-export default function SignIn() {
+export default function SignIn({ onButtonClick }) {
   let [count, setCount] = useState("password");
   let [item, setItem] = useState(true);
 
@@ -16,10 +16,6 @@ export default function SignIn() {
     }
   };
 
-  const OFF = () => {
-    
-  }
-
   return (
     <div className="SignIn">
       <div className="Sign-in-header">
@@ -27,7 +23,11 @@ export default function SignIn() {
       </div>
       <div className="Sign-in">
         <div className="pointer">
-          <a href="#" onClick = {OFF}>
+          <a
+            onClick={() => {
+              onButtonClick();
+            }}
+          >
             <small>Sign up </small>
             <font> &gt;</font>
           </a>
@@ -47,14 +47,14 @@ export default function SignIn() {
           </form>
           <form>
             <div className="Vlads">
-            <input
+              <input
                 required
                 id="InputPassword"
                 className="InputPassword"
                 type={count}
                 placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"
               ></input>
-              <button type="button" onClick = {change}>
+              <button type="button" onClick={change}>
                 <Eye />
               </button>
             </div>
