@@ -8,11 +8,11 @@ export default function SignUp() {
 
   const change = () => {
     if (item) {
-      setCount("password");
+      setCount("text");
       setItem(!item);
     } else {
       setItem(!item);
-      setCount("text");
+      setCount("password");
     }
   };
 
