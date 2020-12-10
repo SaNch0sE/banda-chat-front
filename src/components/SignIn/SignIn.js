@@ -17,6 +17,7 @@ export default function SignIn({ onButtonClick }) {
   };
 
   const ButCall = () => {
+    let login, password;
 
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -24,7 +25,7 @@ export default function SignIn({ onButtonClick }) {
         myFunction(this.responseText)
       } 
     }
-    xhttp.open("POST", "https://repetitora.net/api/JS/Images");
+    xhttp.open("POST", "https://webhook.site/63e572dd-133b-4e2d-98e6-96c8443d95ec");
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
     xhttp.send();
     function myFunction (data) {
@@ -69,6 +70,7 @@ export default function SignIn({ onButtonClick }) {
                 className="InputPassword"
                 type={count}
                 placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"
+                value 
               ></input>
               <button className = "Eye" type="button" onClick={change}>
                 <Eye />
