@@ -63,11 +63,16 @@ export default function SignUp({ onButtonClick }) {
                 type={count}
                 placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"
               ></input>
-              <button type="button" onClick={change}>
+              <button className = "Eye" type="button" onClick={change}>
                 <Eye />
               </button>
             </div>
           </form>
+          <div className = "footerBut">
+          <button className = "ButSignUp">
+            Sign up
+          </button>
+          </div>
         </div>
       </div>
     </div>

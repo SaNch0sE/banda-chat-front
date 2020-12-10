@@ -139,7 +139,7 @@
   position: relative;
 }
 
-.SignUp .Sign-up .MySendCodeForm .Vlads button {
+.SignUp .Sign-up .MySendCodeForm .Vlads .Eye {
   position: absolute;
   right: 0;
   top: 35%;
@@ -154,5 +154,18 @@
   display: inline-block;
   width: 15px;
   height: 15px;
+}
+
+.SignUp .Sign-up .MySendCodeForm .footerBut {
+  margin-top: 10px;
+}
+
+.SignUp .Sign-up .MySendCodeForm .footerBut .ButSignUp {
+  background-color: #89c1dc;
+  border: 0;
+  border-radius: 50px;
+  font-size: 20px;
+  padding: 0 30px;
+  float: right;
 }
 /*# sourceMappingURL=SignUp.css.map */

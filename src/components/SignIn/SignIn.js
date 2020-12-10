@@ -16,6 +16,22 @@ export default function SignIn({ onButtonClick }) {
     }
   };
 
+  const ButCall = () => {
+
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        myFunction(this.responseText)
+      } 
+    }
+    xhttp.open("POST", "https://repetitora.net/api/JS/Images");
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+    xhttp.send();
+    function myFunction (data) {
+      console.log(data);
+    }
+  }
+
   return (
     <div className="SignIn">
       <div className="Sign-in-header">
@@ -39,7 +55,7 @@ export default function SignIn({ onButtonClick }) {
           <form>
             <input
               className="InputLogin"
-              placeholder="Login or email"
+              placeholder="login"
               minLength="5"
               maxLength="30"
               type="text"
@@ -54,7 +70,7 @@ export default function SignIn({ onButtonClick }) {
                 type={count}
                 placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"
               ></input>
-              <button type="button" onClick={change}>
+              <button className = "Eye" type="button" onClick={change}>
                 <Eye />
               </button>
             </div>
@@ -62,8 +78,14 @@ export default function SignIn({ onButtonClick }) {
           <a href="#">
             <small>Forgot your password?</small>
           </a>
+          <div className = "footerBut">
+          <button className = "ButSignIn" onClick={ButCall}>
+            Sign in
+          </button>
+          </div>
         </div>
       </div>
     </div>
   );
 }
+

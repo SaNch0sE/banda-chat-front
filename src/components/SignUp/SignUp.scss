@@ -72,7 +72,7 @@
         }
         .Vlads {
           position: relative;
-          button {
+          .Eye {
             position: absolute;
             right: 0;
             top: 35%;
@@ -86,7 +86,22 @@
             width: 15px;
             height: 15px;
           }
+          }  
+          .footerBut {
+            margin-top: 10px;
+            .ButSignUp {
+              background-color: #89c1dc;
+              border: 0;
+              border-radius: 50px;
+              font-size: 20px;
+              padding: 0 30px;
+              float: right;
+            }
         }
       }
     }
+  }
+  .testAjax {
+    width: 100%;
+    height: 100%;
   }
