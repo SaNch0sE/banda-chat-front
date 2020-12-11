@@ -5,6 +5,8 @@ import Eye from "./eyeIcon";
 export default function SignIn({ onButtonClick }) {
   let [count, setCount] = useState("password");
   let [item, setItem] = useState(true);
+  let login = React.createRef();
+  let password = React.createRef();
 
   const change = () => {
     if (item) {
@@ -17,7 +19,6 @@ export default function SignIn({ onButtonClick }) {
   };
 
   const ButCall = () => {
-    let login, password;
 
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -25,9 +26,9 @@ export default function SignIn({ onButtonClick }) {
         myFunction(this.responseText)
       } 
     }
-    xhttp.open("POST", "https://webhook.site/63e572dd-133b-4e2d-98e6-96c8443d95ec");
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
-    xhttp.send();
+    xhttp.open("POST", "https://reqres.in/api/users");
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-unlecoded")
+    xhttp.send({ name: 'data', job: 'qwer'});
     function myFunction (data) {
       console.log(data);
     }
@@ -57,9 +58,8 @@ export default function SignIn({ onButtonClick }) {
             <input
               className="InputLogin"
               placeholder="login"
-              minLength="5"
-              maxLength="30"
               type="text"
+              ref = {login}
             ></input>
           </form>
           <form>
@@ -70,7 +70,7 @@ export default function SignIn({ onButtonClick }) {
                 className="InputPassword"
                 type={count}
                 placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"
-                value 
+                ref = {password}
               ></input>
               <button className = "Eye" type="button" onClick={change}>
                 <Eye />
