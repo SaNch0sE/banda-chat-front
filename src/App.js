@@ -15,8 +15,8 @@ function App() {
   return (
     <div className="wrapper">
       <Header />
-      {togle &&  <SignUp onButtonClick={onButtonClick} />}
       {!togle &&  <SignIn onButtonClick={onButtonClick} />}
+      {togle &&  <SignUp onButtonClick={onButtonClick} />}
       </div>
   );
 }

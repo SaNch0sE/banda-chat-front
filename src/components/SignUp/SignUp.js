@@ -5,6 +5,9 @@ import Eye from "./eyeIcon";
 export default function SignUp({ onButtonClick }) {
   let [count, setCount] = useState("password");
   let [item, setItem] = useState(true);
+  let login = React.createRef();
+  let password = React.createRef();
+  let email = React.createRef();
 
   const change = () => {
     if (item) {
@@ -15,6 +18,18 @@ export default function SignUp({ onButtonClick }) {
       setCount("password");
     }
   };
+
+  const ButCall = () => {
+    const axios = require('axios');
+    axios.post('https://reqres.in/api/users', {
+      login: login.current.value,
+      email: email.current.value,
+      password: password.current.value
+    })
+    .then (() => {
+    })
+
+  }
 
   return (
     <div className="SignUp">
@@ -44,6 +59,7 @@ export default function SignUp({ onButtonClick }) {
               minLength="5"
               maxLength="30"
               type="text"
+              ref={login}
             ></input>
           </form>
           <form>
@@ -52,6 +68,7 @@ export default function SignUp({ onButtonClick }) {
               className="InputEmail"
               placeholder="email"
               type="email"
+              ref={email}
             ></input>
           </form>
           <form>
@@ -62,6 +79,7 @@ export default function SignUp({ onButtonClick }) {
                 className="InputPassword"
                 type={count}
                 placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"
+                ref={password}
               ></input>
               <button className = "Eye" type="button" onClick={change}>
                 <Eye />
@@ -69,7 +87,7 @@ export default function SignUp({ onButtonClick }) {
             </div>
           </form>
           <div className = "footerBut">
-          <button className = "ButSignUp">
+          <button className = "ButSignUp" onClick={ButCall}>
             Sign up
           </button>
           </div>

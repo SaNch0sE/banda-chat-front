@@ -19,19 +19,12 @@ export default function SignIn({ onButtonClick }) {
   };
 
   const ButCall = () => {
+    const axios = require('axios');
+    axios.post('https://reqres.in/api/users', {
+      name: 'Fred',
+      job: 'Flintstone'
+    })
 
-    let xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 200) {
-        myFunction(this.responseText)
-      } 
-    }
-    xhttp.open("POST", "https://reqres.in/api/users");
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-unlecoded")
-    xhttp.send({ name: 'data', job: 'qwer'});
-    function myFunction (data) {
-      console.log(data);
-    }
   }
 
   return (
