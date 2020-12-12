@@ -21,14 +21,18 @@ export default function SignUp({ onButtonClick }) {
 
   const ButCall = () => {
     const axios = require('axios');
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (re.test(String(email.current.value).toLowerCase()) && password.current.selectionEnd > 3){
     axios.post('https://reqres.in/api/users', {
       login: login.current.value,
       email: email.current.value,
       password: password.current.value
     })
-    .then (() => {
+    .then (res => {
+      if (res.status === 201)
+      console.log(res.status);
     })
-
+  }
   }
 
   return (

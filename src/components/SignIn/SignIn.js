@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, } from "react";
+import { BrowserRouter, Redirect, Route } from "react-router-dom";
 import CloudMoon from "../../img/Cloud-Moon.png";
 import Eye from "./eyeIcon";
 
@@ -20,11 +21,16 @@ export default function SignIn({ onButtonClick }) {
 
   const ButCall = () => {
     const axios = require('axios');
+    if (password.current.selectionEnd > 3) {
     axios.post('https://reqres.in/api/users', {
       name: 'Fred',
       job: 'Flintstone'
     })
-
+    .then (res => {
+      if (res.status === 201)
+      return <Redirect to={"/chat"}/>;
+    })
+  }
   }
 
   return (
