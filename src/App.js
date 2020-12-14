@@ -12,7 +12,7 @@ import './components/SignIn/SignIn.css'
 import SignIn from './components/SignUp/SignUp';
 import SignUp from './components/SignIn/SignIn';
 import Chat from "./components/Chat/Chat";
-import "axios"
+import "axios";
 
 function App() {
   const [togle, setTogle] = useState(true);

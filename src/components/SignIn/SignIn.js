@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import CloudMoon from "../../img/Cloud-Moon.png";
 import Eye from "./eyeIcon";
+import Constants from '../../constants/constants';
 
 export default function SignIn({ onButtonClick }) {
   let [count, setCount] = useState("password");
@@ -22,9 +23,9 @@ export default function SignIn({ onButtonClick }) {
   const ButCall = () => {
     const axios = require("axios");
     axios
-      .post("https://reqres.in/api/register", {
-        name: login.current.value,
-        job: password.current.value,
+      .post(`${Constants.SERVER}auth/sign-in`, {
+        login: login.current.value,
+        password: password.current.value,
       })
       .then(function (res) {
         if (res.status === 200) {
@@ -32,10 +33,10 @@ export default function SignIn({ onButtonClick }) {
         }
       })
       .catch(function (err) {
-        if (err.response.status === 400) {
+        if (err.response.status === 401 || err.response.status === 422) {
           alert(err.response.data.error,  err.response.data.details);   
         } else if (err.response.status === 500) {
-          alert('ошибка на сервере, можешь сделать плажку где будешь писать что-то в духе "Упс, сервер временно недоступен, попробуйте позже"')
+          alert('Упс, сервер временно недоступен, попробуйте позже')
         }
       })
   };
