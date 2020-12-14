@@ -1,6 +1,7 @@
-import React, { useState, } from "react";
-import { BrowserRouter, Redirect, Route } from "react-router-dom";
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import CloudMoon from "../../img/Cloud-Moon.png";
+import Chat from "../Chat/Chat";
 import Eye from "./eyeIcon";
 
 export default function SignIn({ onButtonClick }) {
@@ -8,6 +9,7 @@ export default function SignIn({ onButtonClick }) {
   let [item, setItem] = useState(true);
   let login = React.createRef();
   let password = React.createRef();
+  let history = useHistory();
 
   const change = () => {
     if (item) {
@@ -18,20 +20,19 @@ export default function SignIn({ onButtonClick }) {
       setCount("password");
     }
   };
-
   const ButCall = () => {
-    const axios = require('axios');
-    if (password.current.selectionEnd > 3) {
-    axios.post('https://reqres.in/api/users', {
-      name: 'Fred',
-      job: 'Flintstone'
-    })
-    .then (res => {
-      if (res.status === 201)
-      return <Redirect to={"/chat"}/>;
-    })
-  }
-  }
+    const axios = require("axios");
+    axios
+      .post("https://reqres.in/api/users", {
+        name: login.current.value,
+        job: password.current.value,
+      })
+      .then((res) => {
+        if (res.status === 201) {
+          history.push("/chat");
+        }
+      });
+  };
 
   return (
     <div className="SignIn">
@@ -58,7 +59,7 @@ export default function SignIn({ onButtonClick }) {
               className="InputLogin"
               placeholder="login"
               type="text"
-              ref = {login}
+              ref={login}
             ></input>
           </form>
           <form>
@@ -69,9 +70,9 @@ export default function SignIn({ onButtonClick }) {
                 className="InputPassword"
                 type={count}
                 placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"
-                ref = {password}
+                ref={password}
               ></input>
-              <button className = "Eye" type="button" onClick={change}>
+              <button className="Eye" type="button" onClick={change}>
                 <Eye />
               </button>
             </div>
@@ -79,14 +80,13 @@ export default function SignIn({ onButtonClick }) {
           <a href="#">
             <small>Forgot your password?</small>
           </a>
-          <div className = "footerBut">
-          <button className = "ButSignIn" onClick={ButCall}>
-            Sign in
-          </button>
+          <div className="footerBut">
+            <button className="ButSignIn" onClick={ButCall}>
+              Sign in
+            </button>
           </div>
         </div>
       </div>
     </div>
   );
 }
-
