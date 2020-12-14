@@ -20,19 +20,27 @@ export default function SignUp({ onButtonClick }) {
   };
 
   const ButCall = () => {
-    const axios = require('axios');
-    axios.post('https://reqres.in/api/users', {
-      login: login.current.value,
-      email: email.current.value,
-      password: password.current.value
-    })
-    .then ((res) => {
-      if (res.status === 201)
-      alert("Registr - Succeful");
-      onButtonClick();
-    })
-  }
-  
+    const axios = require("axios");
+    axios
+      .post("https://reqres.in/api/users", {
+        login: login.current.value,
+        email: email.current.value,
+        password: password.current.value,
+      })
+      .then((res) => {
+        if (res.status === 200) {
+          alert("Registr - Succeful");
+          onButtonClick();
+        }
+      })
+      .catch(function (err) {
+        if (err.response.status === 400) {
+          alert(err.response.data.error,  err.response.data.details);   
+        } else if (err.response.status === 500) {
+          alert('ошибка на сервере, можешь сделать плажку где будешь писать что-то в духе "Упс, сервер временно недоступен, попробуйте позже"')
+        }
+      })
+  };
 
   return (
     <div className="SignUp">
@@ -41,7 +49,8 @@ export default function SignUp({ onButtonClick }) {
       </div>
       <div className="Sign-up">
         <div className="pointer">
-          <a href = ""
+          <a
+            href=""
             onClick={() => {
               onButtonClick();
             }}
@@ -84,15 +93,15 @@ export default function SignUp({ onButtonClick }) {
                 placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"
                 ref={password}
               ></input>
-              <button className = "Eye" type="button" onClick={change}>
+              <button className="Eye" type="button" onClick={change}>
                 <Eye />
               </button>
             </div>
           </form>
-          <div className = "footerBut">
-          <button className = "ButSignUp" onClick={ButCall}>
-            Sign up
-          </button>
+          <div className="footerBut">
+            <button className="ButSignUp" onClick={ButCall}>
+              Sign up
+            </button>
           </div>
         </div>
       </div>

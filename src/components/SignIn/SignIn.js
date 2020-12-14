@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import CloudMoon from "../../img/Cloud-Moon.png";
-import Chat from "../Chat/Chat";
 import Eye from "./eyeIcon";
 
 export default function SignIn({ onButtonClick }) {
@@ -23,15 +22,22 @@ export default function SignIn({ onButtonClick }) {
   const ButCall = () => {
     const axios = require("axios");
     axios
-      .post("https://reqres.in/api/users", {
+      .post("https://reqres.in/api/register", {
         name: login.current.value,
         job: password.current.value,
       })
-      .then((res) => {
-        if (res.status === 201) {
+      .then(function (res) {
+        if (res.status === 200) {
           history.push("/chat");
         }
-      });
+      })
+      .catch(function (err) {
+        if (err.response.status === 400) {
+          alert(err.response.data.error,  err.response.data.details);   
+        } else if (err.response.status === 500) {
+          alert('ошибка на сервере, можешь сделать плажку где будешь писать что-то в духе "Упс, сервер временно недоступен, попробуйте позже"')
+        }
+      })
   };
 
   return (
