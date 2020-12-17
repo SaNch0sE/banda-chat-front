@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import CloudMoon from "../../img/Cloud-Moon.png";
 import Eye from "./eyeIcon";
-import Constants from '../../constants/constants';
+import constants from '../../constants/constants';
 
 export default function SignIn({ onButtonClick }) {
   let [count, setCount] = useState("password");
@@ -23,13 +23,15 @@ export default function SignIn({ onButtonClick }) {
   const ButCall = () => {
     const axios = require("axios");
     axios
-      .post(`${Constants.SERVER}auth/sign-in`, {
+      .post(`${constants.SERVER}auth/sign-in`, {
         login: login.current.value,
         password: password.current.value,
       })
       .then(function (res) {
         if (res.status === 200) {
-          history.push("/chat");
+          localStorage.setItem('accessToken', res.data.accessToken);
+          localStorage.setItem('refreshToken', res.data.refreshToken);
+          history.replace({ pathname: "/chat" });
         }
       })
       .catch(function (err) {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Cloud from '../../img/Cloud.png';
 import Eye from './eyeIcon';
-import Constants from '../../constants/constants';
+import constants from '../../constants/constants';
 
 export default function SignUp({ onButtonClick }) {
   let [count, setCount] = useState('password');
@@ -23,7 +23,7 @@ export default function SignUp({ onButtonClick }) {
   const ButCall = () => {
     const axios = require('axios');
     axios
-      .post(`${Constants.SERVER}auth/sign-up`, {
+      .post(`${constants.SERVER}auth/sign-up`, {
         login: login.current.value,
         // email: email.current.value,
         password: password.current.value,

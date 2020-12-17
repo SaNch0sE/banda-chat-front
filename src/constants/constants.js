@@ -1,6 +1,6 @@
 const constants = {
-  PORT: '3000',
-  SERVER: 'http://localhost:4000/',
+  CHAT: 'http://localhost:3000/chat',
+  SERVER: 'http://localhost:3000/',
 }
 
 export default constants;

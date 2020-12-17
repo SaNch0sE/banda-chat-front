@@ -11,29 +11,31 @@ import './components/SignUp/SignUp.css'
 import './components/SignIn/SignIn.css'
 import SignIn from './components/SignUp/SignUp';
 import SignUp from './components/SignIn/SignIn';
-import Chat from "./components/Chat/Chat";
+// import Chat from "./components/Chat/Chat";
 import "axios";
+import constants from "./constants/constants";
 
 function App() {
   const [togle, setTogle] = useState(true);
   const onButtonClick = () => {
-  setTogle(!togle);
-  }; 
+    setTogle(!togle);
+  };
   return (
     <div className="wrapper">
       <Router>
-      <Switch>
-        <Route path="/chat">
-          <Chat />
-        </Route>
-        <Route path="/">
-        <Header />
-      {!togle &&  <SignIn onButtonClick={onButtonClick} />}
-      {togle &&  <SignUp onButtonClick={onButtonClick} />}
-        </Route>
-      </Switch>
+        <Switch>
+          <Route path='/chat' component={() => {
+            window.location.href = constants.CHAT;
+            return null;
+          }} />
+          <Route path="/">
+            <Header />
+            {!togle && <SignIn onButtonClick={onButtonClick} />}
+            {togle && <SignUp onButtonClick={onButtonClick} />}
+          </Route>
+        </Switch>
       </Router>
-      </div>
+    </div>
   );
 }
 
